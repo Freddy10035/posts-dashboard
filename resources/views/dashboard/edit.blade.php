@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" >
         <h1>Edit Post</h1>
         <form method="POST" action="/dashboard/update/{{$post->id }}">
             @csrf

@@ -11,7 +11,7 @@
 <body>
     <div class="container">
         <h1>Edit Post</h1>
-        <form method="POST" action="{{ route('dashboard.update', $post->id) }}">
+        <form method="POST" action="/dashboard/update/{{$post->id }}">
             @csrf
             @method('PUT')
             <div class="form-group">

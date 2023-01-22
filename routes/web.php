@@ -24,4 +24,5 @@ Route::get('/dashboard', [DashboardController::class,  'index']);
 Route::get('/dashboard/create', [DashboardController::class, 'create']);
 Route::post('/dashboard', [DashboardController::class, 'store']);
 Route::get('/dashboard/edit/{id}', [DashboardController::class, 'edit']);
+Route::put('/dashboard/update/{id}', [DashboardController::class, 'update']);
 Route::get('/dashboard/delete/{id}', [DashboardController::class, 'delete']);

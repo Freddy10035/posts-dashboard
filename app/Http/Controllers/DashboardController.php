@@ -37,7 +37,7 @@ class DashboardController extends Controller
         $post->body = $request->input('body');
         $post->save();
 
-        return redirect()->route('dashboard.index');
+        return redirect('dashboard');
     }
 
 
@@ -51,12 +51,29 @@ class DashboardController extends Controller
     }
 
 
+    //....update the edited post
+    public function update(Request $request, $id)
+    {
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'body' => 'required',
+        ]);
+
+        $post = Post::find($id);
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
+
+        return redirect('dashboard');
+    }
+
+
     //....deleting the post
     public function delete($id)
     {
         $post = Post::find($id);
         $post->delete();
 
-        return redirect()->route('dashboard.index');
+        return redirect('dashboard');
     }
 }
